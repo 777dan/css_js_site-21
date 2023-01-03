@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id="col_sel" href="lgreen.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="change">
+        <h3 class="ch">Поменять тему сайта</h3>
+        <form name="color" onclick="sm()">
+            <input id="c1" type="radio" name="color" value="lred"><label id="cp1" for="c1">Светло-красный</label><br>
+            <input id="c2" type="radio" name="color" value="lgreen" checked><label id="cp2"
+                for="c2">Светло-зелёный</label><br>
+            <input id="c3" type="radio" name="color" value="lblue"><label id="cp3" for="c3">Светло-голубой</label>
+        </form>
+        <svg id="logo" width="300px" height="300px">
+            <circle cx="47%" cy="150" r="100" stroke="yellow" stroke-width="7" fill="lightblue" />
+            <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" />
+            <ellipse cx="47%" cy="150" rx="100" ry="50" style="fill:lightblue;stroke:yellow;stroke-width:7" />
+            <ellipse cx="47%" cy="150" rx="40" ry="100" style="fill:lightblue;stroke:yellow;stroke-width:7" />
+        </svg>
+    </header>
+    </div>
+    <main>
+        <ul class="menu_site">
+            <li id="link1"><a href="calen.html">Календарь</a></li>
+            <li id="link2"><a href="conv.html">Конвертер валюты</a></li>
+            <li id="link3"><a href="timer.html">Таймер</a></div>
+            <li id="link4"><a href="reg.html">Зарегистрироваться</a></li>
+            <li id="link5"><a href="slide.html">Слайдшоу</a></li>
+            <li id="link6"><a href="index.html">Главная</a></li>
+        </ul>
+    </main>
+    <h1 class="ch1">Конвертер валюты</h1>
+    <form class="forma1" name="forma1">
+        <input type="text" name="t1" placeholder="Гривны">
+        <input type="button" name="button" value="Перевести" onclick="val1(forma1)">
+        <input type="text" name="res1" placeholder="Доллары"> <br />
+        <input type="text" name="t2" placeholder="Доллары">
+        <input type="button" name="button" value="Перевести" onclick="val2(forma1)">
+        <input type="text" name="res2" placeholder="Гривны"><br />
+    </form>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 300px;
+        }
+
+        header h3 {
+            position: relative;
+            top: 40px;
+            left: 10px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #logo {
+            position: absolute;
+            top: -100px;
+            left: 777px;
+        }
+
+        .change {
+            position: absolute;
+            top: 80px;
+        }
+
+        .menu_site {
+            position: absolute;
+            top: 290px;
+            left: 0;
+            /* margin: 10px; */
+            height: 60px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .menu_site a {
+            text-decoration: none;
+            font-family: Impact, serif;
+            transition: all 1s;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px;
+            font-size: 45px;
+            display: inline;
+            text-align: center;
+            margin-left: 50px;
+        }
+
+        .menu_site a:hover {
+            color: rgb(0, 54, 0);
+            transition: all 1s;
+        }
+
+        .ch1 {
+            position: absolute;
+            top: 400px;
+            left: 630px;
+            text-align: center;
+            font-size: 70px;
+            font-family: Impact, serif;
+        }
+
+        .ch {
+            position: relative;
+            top: -40px;
+            left: 10px;
+            margin: 20;
+            font-family: Arial, sans-serif;
+        }
+
+        .forma1 input {
+            height: 70px;
+            width: 200px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 50px 0 50px 0;
+            margin: 5px;
+            transition: all 1s;
+        }
+
+        .forma1 input:hover {
+            transition: all 1s;
+        }
+
+        .forma1 {
+            position: absolute;
+            top: 600px;
+            left: 600px;
+        }
+
+        .color {
+            position: absolute;
+            top: 100px;
+        }
+
+        #cp1 {
+            background-color: pink;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: red 3px 3px 3px 3px;
+            position: relative;
+            top: -10px;
+            left: 30px;
+        }
+
+        #cp2 {
+            background-color: lightgreen;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: green 3px 3px 3px 3px;
+            position: relative;
+            left: 30px;
+        }
+
+        #cp3 {
+            background-color: lightblue;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: blue 3px 3px 3px 3px;
+            position: relative;
+            top: 10px;
+            left: 30px;
+        }
+
+        :active,
+        :hover,
+        :focus {
+            outline: 0;
+            outline-offset: 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+            a {
+                font-size: 18px;
+            }
+
+            .forma1 {
+                left: 150px;
+            }
+
+            .ch1 {
+                left: 180px;
+                top: 200px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1600px) {
+            a {
+                font-size: 26px;
+            }
+
+            .ch1 {
+                font-size: 50px;
+                top: 430px;
+                left: 420px;
+            }
+
+            .forma1 {
+                left: 300px;
+            }
+
+            #logo {
+                left: 510px;
+            }
+        }
+    </style>
+    <script>
+        function val1() {
+            var dol = +document.forma1.t1.value;
+            var b = dol / 27.7515;
+            var n = b.toFixed(2) + " $";
+            document.forma1.res1.value = n;
+        }
+        function val2() {
+            var dol = +document.forma1.t2.value;
+            var b = dol * 27.7515;
+            var n = b.toFixed(2) + " грн";
+            document.forma1.res2.value = n;
+        }
+
+        function sm() {
+            var ac = document.getElementById("c1");
+            var bc = document.getElementById("c2");
+            var cc = document.getElementById("c3");
+            var css1 = document.getElementById('col_sel');
+            var cssHref = css1.getAttribute('href');
+
+            if (ac.checked == true) {
+                css1.setAttribute('href', 'lred.css');
+            }
+
+            if (bc.checked == true) {
+                css1.setAttribute('href', 'lgreen.css');
+            }
+
+            if (cc.checked == true) {
+                css1.setAttribute('href', 'lblue.css');
+            }
+
+        }
+    </script>
+</body>
+
+</html>

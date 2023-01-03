@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id="col_sel" href="lgreen.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="change">
+        <h3 class="ch">Поменять тему сайта</h3>
+        <form name="color" onclick="sm()">
+            <input id="c1" type="radio" name="color" value="lred"><label id="cp1" for="c1">Светло-красный</label><br>
+            <input id="c2" type="radio" name="color" value="lgreen" checked><label id="cp2"
+                for="c2">Светло-зелёный</label><br>
+            <input id="c3" type="radio" name="color" value="lblue"><label id="cp3" for="c3">Светло-голубой</label>
+        </form>
+        <svg id="logo" width="300px" height="300px">
+            <circle cx="47%" cy="150" r="100" stroke="yellow" stroke-width="7" fill="lightblue" />
+            <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" />
+            <ellipse cx="47%" cy="150" rx="100" ry="50" style="fill:lightblue;stroke:yellow;stroke-width:7" />
+            <ellipse cx="47%" cy="150" rx="40" ry="100" style="fill:lightblue;stroke:yellow;stroke-width:7" />
+        </svg>
+    </header>
+    <main>
+        <ul class="menu_site">
+            <li id="link1"><a href="calen.html">Календарь</a></li>
+            <li id="link2"><a href="conv.html">Конвертер валюты</a></li>
+            <li id="link3"><a href="timer.html">Таймер</a></div>
+            <li id="link4"><a href="reg.html">Зарегистрироваться</a></li>
+            <li id="link5"><a href="slide.html">Слайдшоу</a></li>
+            <li id="link6"><a href="index.html">Главная</a></li>
+        </ul>
+    </main>
+    <h1 class="ch1">Время до окончания акции</h1>
+    <div id="timer">
+        <div class="block1">
+            <div class="block">
+                <span id="start_time"></span>
+            </div>
+
+            <div class="block">
+                <span id="future"></span>
+            </div>
+
+            <div class="block">
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function check_time(time) {
+            if (time < 10) time = '0' + time;
+            return time;
+        }
+
+        function show_start_time() {
+            var d = new Date(),
+                time = document.getElementById('start_time');
+
+            time.innerHTML = "Сейчас: " + check_time(d.getDate()) + "." + check_time(d.getMonth() + 1) + '.' + d.getFullYear()
+                + ", " + check_time(d.getHours()) + ":" + check_time(d.getMinutes()) + ":" + check_time(d.getSeconds());
+            setInterval(show_start_time, 1000);
+        }
+
+        function show_future_time() {
+            var d = new Date(2021, 6, 4, 5, 40, 59),
+                time = document.getElementById('future');
+
+            time.innerHTML = "Конец: " + check_time(d.getDate()) + "." + check_time(d.getMonth() + 1) + '.' + check_time(d.getFullYear()) + ", " + check_time(d.getHours()) + ":" + check_time(d.getMinutes()) + ":" + check_time(d.getSeconds());
+
+        }
+
+        function show_time() {
+            var d = new Date(), future_date = new Date(2021, 6, 4, 5, 40, 59),
+                diff = future_date - d;
+            var days = Math.floor(diff / (1000 * 60 * 60 * 24)),
+                hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            var time = document.getElementById('time');
+            time.innerHTML = 'Осталось: ' + check_time(days) + " дней, " + check_time(hours) + ":" + check_time(minutes) + ":" + check_time(seconds);
+            setInterval(show_time, 1000);
+            if (diff < 0) {
+                var t = setInterval(show_time, 1000);
+                clearInterval(t);
+                time.innerHTML = 'Время истекло!';
+            }
+        }
+        show_time();
+        show_start_time();
+        show_future_time();
+
+        function sel1() {
+            var css1 = document.getElementById('col_sel');
+            var cssHref = css1.getAttribute('href');
+            if (c1.checked) {
+                css1.setAttribute('href', 'lred.css');
+            }
+        }
+
+        function sel2() {
+            var css1 = document.getElementById('col_sel');
+            var cssHref = css1.getAttribute('href');
+            if (c2.checked) {
+                css1.setAttribute('href', 'lgreen.css');
+            }
+        }
+
+        function sel3() {
+            var css1 = document.getElementById('col_sel');
+            var cssHref = css1.getAttribute('href');
+            if (c3.checked) {
+                css1.setAttribute('href', 'lblue.css');
+            }
+        }
+    </script>
+    </div>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 300px;
+        }
+
+        header h3 {
+            position: relative;
+            top: 40px;
+            left: 10px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #logo {
+            position: absolute;
+            top: -100px;
+            left: 777px;
+        }
+
+        .change {
+            position: absolute;
+            top: 80px;
+        }
+
+        .menu_site {
+            position: absolute;
+            top: 290px;
+            left: 0;
+            /* margin: 10px; */
+            height: 60px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .menu_site a {
+            text-decoration: none;
+            font-family: Impact, serif;
+            transition: all 1s;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px;
+            font-size: 45px;
+            display: inline;
+            text-align: center;
+            margin-left: 50px;
+        }
+
+        .menu_site a:hover {
+            color: rgb(0, 54, 0);
+            transition: all 1s;
+        }
+
+        .ch1 {
+            position: absolute;
+            top: 350px;
+            left: 500px;
+            text-align: center;
+            font-size: 70px;
+            font-family: Impact, serif;
+        }
+
+        .ch {
+            position: relative;
+            top: -40px;
+            left: 10px;
+            margin: 20;
+            font-family: Arial, sans-serif;
+        }
+
+        #cp1 {
+            background-color: pink;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: red 3px 3px 3px 3px;
+            position: relative;
+            top: -10px;
+            left: 30px;
+        }
+
+        #cp2 {
+            background-color: lightgreen;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: green 3px 3px 3px 3px;
+            position: relative;
+            left: 30px;
+        }
+
+        #cp3 {
+            background-color: lightblue;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: blue 3px 3px 3px 3px;
+            position: relative;
+            top: 10px;
+            left: 30px;
+        }
+
+        #timer {
+            position: absolute;
+            top: 500px;
+            left: 600px;
+            font-size: 50px;
+            padding: 10px;
+        }
+
+        .color {
+            position: absolute;
+            top: 100px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            a {
+                font-size: 18px;
+            }
+            .ch1 {
+                font-size: 50px;
+                left: 160px;
+                top: 300px;
+            }
+
+            #timer {
+                font-size: 50px;
+                left: 150px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1600px) {
+            a {
+                font-size: 26px;
+            }
+
+            .ch1 {
+                font-size: 50px;
+                top: 330px;
+                left: 410px;
+            }
+
+            #timer {
+                left: 400px;
+            }
+
+            #logo {
+                left: 570px;
+            }
+        }
+    </style>
+</body>
+
+</html>

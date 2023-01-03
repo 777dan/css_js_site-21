@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link id="col_sel" href="lgreen.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h3>Поменять тему сайта</h3>
+        <form name="color" onclick="sm()">
+            <input id="c1" type="radio" name="color" value="lred"><label id="cp1" for="c1">Светло-красный</label><br>
+            <input id="c2" type="radio" name="color" value="lgreen" checked><label id="cp2"
+                for="c2">Светло-зелёный</label><br>
+            <input id="c3" type="radio" name="color" value="lblue"><label id="cp3" for="c3">Светло-голубой</label>
+        </form>
+        <svg id="logo" width="300px" height="300px">
+            <circle cx="47%" cy="150" r="100" stroke="yellow" stroke-width="7" fill="lightblue" />
+            <animate attributeType="CSS" attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" />
+            <ellipse cx="47%" cy="150" rx="100" ry="50" style="fill:lightblue;stroke:yellow;stroke-width:7" />
+            <ellipse cx="47%" cy="150" rx="40" ry="100" style="fill:lightblue;stroke:yellow;stroke-width:7" />
+        </svg>
+    </header>
+    <main>
+        <ul class="menu_site">
+            <li id="link1"><a href="calen.html">Календарь</a></li>
+            <li id="link2"><a href="conv.html">Конвертер валюты</a></li>
+            <li id="link3"><a href="timer.html">Таймер</a></div>
+            <li id="link4"><a href="reg.html">Зарегистрироваться</a></li>
+            <li id="link5"><a href="slide.html">Слайдшоу</a></li>
+            <li id="link6"><a href="index.html">Главная</a></li>
+        </ul>
+    </main>
+    <!-- <canvas id="myCanvas" width="100" height="550"></canvas> -->
+    <h1 class="ch1">Тест</h1>
+    <div id="tests">
+        <div class="column">
+            <p class="pcl">1) В каком году появился JavaScript?</p>
+            <input type="radio" id="f1" name="rad1"><label for="f1">1995</label><br>
+            <input type="radio" id="f2" name="rad1"><label for="f2">1999</label><br>
+            <input type="radio" id="f3" name="rad1"><label for="f3">1970</label><br>
+            <input type="radio" id="f4" name="rad1"><label for="f4">2010</label><br>
+            <input type="radio" id="f5" name="rad1"><label for="f5">2021</label>
+            <span id="task1"></span>
+        </div>
+        <div class="column">
+            <p class="pcl">2) Для чего нужен CSS?</p>
+            <input type="checkbox" id="f6">Для нормальной работы операционной системы</input><br>
+            <input type="checkbox" id="f7">Для удаления ненужных файлов</input><br>
+            <input type="checkbox" id="f8">Для создания стилей для текста</input><br>
+            <input type="checkbox" id="f9">Для установки игр</input><br>
+            <input type="checkbox" id="f10">Для создания фона сайта</input>
+            <span id="task2"></span>
+        </div>
+        <div class="column">
+            <p class="pcl">3) HTML это ...</p>
+            <input type="radio" id="f11" name="rad2">язык тегов, средствами которой осуществляется разметки веб-страниц
+            для сети
+            Интернет</input><br>
+            <input type="radio" id="f12" name="rad2">антивирус</input><br>
+            <input type="radio" id="f13" name="rad2">имя хакера</input><br>
+            <input type="radio" id="f14" name="rad2">язык программирования для создания 3D игры</input><br>
+            <input type="radio" id="f15" name="rad2">название операционной системы</input>
+            <span id="task3"></span>
+        </div>
+        <div class="column">
+            <p class="pcl">4) Как можно задать переменную в JavaScript, если она задаётся первый раз?</p>
+            <input type="checkbox" id="f16">var a</input><br>
+            <input type="checkbox" id="f17">tag c</input><br>
+            <input type="checkbox" id="f18">peremennaya b</input><br>
+            <input type="checkbox" id="f19">variable d</input><br>
+            <input type="checkbox" id="f20">let f</input>
+            <span id="task4"></span>
+        </div>
+        <div class="column">
+            <p class="pcl">5) Выберете ТОЛЬКО циклы</p>
+            <input type="checkbox" id="f21">while</input><br>
+            <input type="checkbox" id="f22">if</input><br>
+            <input type="checkbox" id="f23">else</input><br>
+            <input type="checkbox" id="f24">var</input><br>
+            <input type="checkbox" id="f25">for</input>
+            <span id="task5"></span>
+        </div>
+        <br>
+        <div id="answer"></div><br>
+        <br>
+
+        <input id="check" type="submit" value="Проверить" onclick="check();">
+        <input id="check" type="submit" value="Заново" onclick="again();">
+
+    </div>
+    <script>
+        function sm() {
+            var ac = document.getElementById("c1");
+            var bc = document.getElementById("c2");
+            var cc = document.getElementById("c3");
+            var css1 = document.getElementById('col_sel');
+            var cssHref = css1.getAttribute('href');
+
+            if (ac.checked == true) {
+                css1.setAttribute('href', 'lred.css');
+            }
+
+            if (bc.checked == true) {
+                css1.setAttribute('href', 'lgreen.css');
+            }
+
+            if (cc.checked == true) {
+                css1.setAttribute('href', 'lblue.css');
+            }
+
+        }
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        // Create gradient
+        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 500);
+        grd.addColorStop(0, "white");
+        grd.addColorStop(1, "black");
+
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(15, 10, 100, 550);
+
+        function again() {
+            location.reload(true);
+        }
+
+
+        function check() {
+            var a = document.getElementById('f1');
+            var b = document.getElementById('f8');
+            var g = document.getElementById('f10');
+            var c = document.getElementById('f11');
+            var d = document.getElementById('f16');
+            var f = document.getElementById('f20');
+            var e = document.getElementById('f21');
+            var h = document.getElementById('f25');
+            var count = 0;
+            if (a.checked == true) {
+                count = count + 1;
+                document.getElementById("task1").style.color = "green";
+                task1.innerHTML = "<br>" + "Ваш балл за ответ 1";
+            }
+
+            else {
+                document.getElementById("task1").style.color = "red";
+                task1.innerHTML = "<br>" + "Ваш балл за ответ 0";
+            }
+
+            if (b.checked == true || g.checked == true) {
+                if (b.checked == true) {
+                    count = count + 1;
+                    document.getElementById("task2").style.color = "yellow";
+                    task2.innerHTML = "<br>" + "Ваш балл за ответ 1";
+                }
+                if (g.checked == true) {
+                    count = count + 1;
+                    document.getElementById("task2").style.color = "yellow";
+                    task2.innerHTML = "<br>" + "Ваш балл за ответ 1";
+                }
+                if (b.checked == true && g.checked == true) {
+                    document.getElementById("task2").style.color = "green";
+                    task2.innerHTML = "<br>" + "Ваш балл за ответ 2";
+                }
+            }
+
+            else {
+                document.getElementById("task2").style.color = "red";
+                task2.innerHTML = "<br>" + "Ваш балл за ответ 0";
+            }
+            if (c.checked == true) {
+                count = count + 1;
+                document.getElementById("task3").style.color = "green";
+                task3.innerHTML = "<br>" + "Ваш балл за ответ 1";
+            }
+            else {
+                document.getElementById("task3").style.color = "red";
+                task3.innerHTML = "<br>" + "Ваш балл за ответ 0";
+            }
+
+            if (d.checked == true || f.checked == true) {
+                if (d.checked == true) {
+                    count = count + 2;
+                    document.getElementById("task4").style.color = "yellow";
+                    task4.innerHTML = "<br>" + "Ваш балл за ответ 2";
+                }
+                if (f.checked == true) {
+                    count = count + 2;
+                    document.getElementById("task4").style.color = "yellow";
+                    task4.innerHTML = "<br>" + "Ваш балл за ответ 2";
+                }
+                if (d.checked == true && f.checked == true) {
+                    document.getElementById("task4").style.color = "green";
+                    task4.innerHTML = "<br>" + "Ваш балл за ответ 4";
+                }
+            }
+
+            else {
+                document.getElementById("task4").style.color = "red";
+                task4.innerHTML = "<br>" + "Ваш балл за ответ 0";
+            }
+
+            if (e.checked == true || h.checked == true) {
+                if (e.checked == true) {
+                    count = count + 2;
+                    document.getElementById("task5").style.color = "yellow";
+                    task5.innerHTML = "<br>" + "Ваш балл за ответ 2";
+                }
+                if (h.checked == true) {
+                    count = count + 2;
+                    document.getElementById("task5").style.color = "yellow";
+                    task5.innerHTML = "<br>" + "Ваш балл за ответ 2";
+                }
+                if (e.checked == true && h.checked == true) {
+                    document.getElementById("task5").style.color = "green";
+                    task5.innerHTML = "<br>" + "Ваш балл за ответ 4";
+                }
+            }
+
+            else {
+                document.getElementById("task5").style.color = "red";
+                task5.innerHTML = "<br>" + "Ваш балл за ответ 0";
+            }
+            if (count > 7) {
+                answer.innerHTML = " Ваша оценка " + count;
+            }
+
+            else {
+                answer.innerHTML = "Вы не прошли тест!!!";
+            }
+        }
+
+    </script>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 300px;
+        }
+
+        header h3 {
+            position: relative;
+            top: 40px;
+            left: 10px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 777px;
+        }
+
+        .menu_site {
+            position: absolute;
+            top: 290px;
+            margin: 10px;
+            height: 60px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .menu_site a {
+            text-decoration: none;
+            font-family: Impact, serif;
+            transition: all 1s;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px;
+            font-size: 45px;
+            display: inline;
+            text-align: center;
+            margin-left: 50px;
+        }
+
+        .menu_site a:hover {
+            color: rgb(0, 54, 0);
+            transition: all 1s;
+        }
+
+        form {
+            position: absolute;
+            top: 100px;
+        }
+
+        #cp1 {
+            background-color: pink;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: red 3px 3px 3px 3px;
+            position: relative;
+            top: -10px;
+            left: 30px;
+        }
+
+        #cp2 {
+            background-color: lightgreen;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: green 3px 3px 3px 3px;
+            position: relative;
+            left: 30px;
+        }
+
+        #cp3 {
+            background-color: lightblue;
+            border: 1px solid #000;
+            width: 120px;
+            text-align: center;
+            box-shadow: blue 3px 3px 3px 3px;
+            position: relative;
+            top: 10px;
+            left: 30px;
+        }
+
+        #myCanvas {
+            position: absolute;
+            top: 350px;
+        }
+
+        .h_2 {
+            position: absolute;
+            top: 310px;
+            left: 900px;
+            font-size: 50px;
+            font-family: Impact, serif;
+        }
+
+        h4 {
+            position: relative;
+            top: 100px;
+            left: 300px;
+        }
+
+        .ans {
+            position: relative;
+            top: 100px;
+            left: 300px;
+        }
+
+        .ans {
+            position: relative;
+            top: 100px;
+            left: 300px;
+        }
+
+        .ans2 {
+            position: relative;
+            top: -380px;
+            left: 1000px;
+        }
+
+        .h2 {
+            position: relative;
+            top: -380px;
+            left: 1000px;
+        }
+
+        #tests {
+            position: relative;
+            top: 120px;
+            height: 500px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .column {
+            width: 40%;
+            float: left;
+            margin-left: 35px;
+        }
+
+        .ch1 {
+            position: absolute;
+            top: 300px;
+            left: 630px;
+            text-align: center;
+            font-size: 70px;
+            font-family: Impact, serif;
+        }
+
+        #check {
+            position: relative;
+            top: 200px;
+            right: 300px;
+            margin: 5px;
+            font-size: 40px;
+            border-radius: 50px 0 50px 0;
+            padding: 10px;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1600px) {
+            a {
+                font-size: 26px;
+            }
+
+            .ch1 {
+                font-size: 50px;
+                top: 330px;
+            }
+
+            #check {
+                font-size: 30px;
+                left: 200px;
+                top: 0;
+            }
+            #logo {
+                left: 510px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            a {
+                font-size: 18px;
+            }
+
+            .ch1 {
+                font-size: 40px;
+                top: 340px;
+            }
+
+            #check {
+                font-size: 20px;
+                left: 200px;
+                top: 0;
+            }
+
+            #logo {
+                left: 400px;
+            }
+        }
+    </style>
+</body>
+
+</html>

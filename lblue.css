@@ -1,0 +1,115 @@
+body {
+    background: lightblue;
+    transition: all 1s;
+}
+
+header h3 {
+    color: blue;
+    transition: all 1s;
+}
+
+.ch {
+    color: blue;
+    transition: all 1s;
+}
+
+header {
+    background-color: rgb(172, 172, 243);
+    transition: all 1s;
+}
+
+.menu_site a {
+    color: blue;
+    transition: all 1s;
+}
+
+.menu_site {
+    background-color: #b1a8e4;
+    transition: all 1s;
+}
+
+.forma1 input {
+    color: blue;
+    background-color: #b1a8e4;
+    transition: all 1s;
+}
+
+.forma1 input {
+    box-shadow: blue 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+.forma1 input:hover {
+    background-color: #8c84b6;
+}
+
+.ch1 {
+    color: blue;
+    transition: all 1s;
+}
+
+table,
+tr,
+td {
+    box-shadow: blue 3px 3px 3px 3px;
+    border: 1px solid blue;
+    background-color: #b1a8e4;
+    transition: all 1s;
+    color: blue;
+}
+
+#resks {
+    color: blue;
+    transition: all 1s;
+} 
+
+.tod {
+    color: rgb(37, 3, 82);
+    background-color: rgb(198, 187, 230);
+    transition: all 1s;
+}
+
+#timer {
+    color: blue;
+    transition: all 1s;
+    border: 3px solid blue;
+}
+
+.butt {
+    color: blue;
+    background-color: #b1a8e4;
+    box-shadow: blue 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+.butt:hover {
+    background-color: #8c84b6;
+}
+
+#img1 {
+    border: 5px solid blue;
+    transition: all 1s;
+}
+
+.pcl {
+    color: blue;
+    font-family: Arial, sans-serif;
+    transition: all 1s;
+}
+
+.column {
+    color: blue;
+    font-family: Arial, sans-serif;
+    transition: all 1s;
+}
+
+#check {
+    color: blue;
+    background-color: #b1a8e4;
+    box-shadow: blue 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+#check:hover {
+    background-color: #8c84b6;
+}

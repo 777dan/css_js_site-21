@@ -1,0 +1,141 @@
+body {
+    background: lightgreen;
+    transition: all 1s;
+}
+
+header h3 {
+    color: green;
+    transition: all 1s;
+}
+
+.ch {
+    color: green;
+    transition: all 1s;
+}
+
+header {
+    background-color: #88ca88;
+    transition: all 1s;
+}
+
+.menu_site a {
+    color: green;
+    transition: all 1s;
+}
+
+.menu_site {
+    background-color: #73bf73;
+    transition: all 1s;
+}
+
+.forma1 input {
+    color: green;
+    background-color: #71e68a;
+    transition: all 1s;
+}
+
+.forma1 input {
+    box-shadow: green 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+.forma1 input:hover {
+    background-color: #5ebb72;
+}
+
+.ch1 {
+    color: green;
+    transition: all 1s;
+}
+
+table,
+tr,
+td {
+    box-shadow: green 3px 3px 3px 3px;
+    border: 1px solid green;
+    background-color: #71e68a;
+    transition: all 1s;
+    color: green;
+}
+
+#resks {
+    color: green;
+    transition: all 1s;
+} 
+
+.tod {
+    color: darkgreen;
+    background-color: rgb(190, 240, 190);
+    transition: all 1s;
+}
+
+#timer {
+    color: green;
+    transition: all 1s;
+    border: 3px solid green;
+}
+
+.butt {
+    color: green;
+    background-color: #71e68a;
+    box-shadow: green 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+.butt:hover {
+    background-color: #5ebb72;
+}
+
+#img1 {
+    border: 5px solid green;
+    transition: all 1s;
+}
+
+.pcl {
+    color: green;
+    font-family: Arial, sans-serif;
+    transition: all 1s;
+}
+
+.column {
+    color: green;
+    font-family: Arial, sans-serif;
+    transition: all 1s;
+}
+
+#check {
+    color: green;
+    background-color: #71e68a;
+    box-shadow: green 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+#check:hover {
+    background-color: #5ebb72;
+}
+
+/* @media screen and (max-width: 1024px) { 
+    header {
+        width: 1024px;
+    }
+    main a {
+        font-size: 20px;
+    }
+    h1.ch1 {
+        font-size: 40px;
+        top: 350px;
+        left: 400px;
+    }
+    #logo {
+        left: 300px;
+    }
+
+    #calendar1 {
+        position: relative;
+        top: 400px;
+        left: -200px;
+    }
+    #slide {
+        left: 300px;
+    }
+  } */

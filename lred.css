@@ -1,0 +1,115 @@
+body {
+    background: #fc8296;
+    transition: all 1s;
+}
+
+header h3 {
+    color: #8c0000;
+    transition: all 1s;
+}
+
+.ch {
+    color: #8c0000;
+    transition: all 1s;
+}
+
+header {
+    background-color: rgb(252, 212, 218);
+    transition: all 1s;
+}
+
+.menu_site a {
+    color: #8c0000;
+    transition: all 1s;
+}
+
+.menu_site {
+    background-color: #ecc2c2;
+    transition: all 1s;
+}
+
+.forma1 input {
+    color: #8c0000;
+    background-color: #ecc2c2;
+    transition: all 1s;
+}
+
+.forma1 input {
+    box-shadow: #8c0000 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+.forma1 input:hover {
+    background-color: #b49898;
+}
+
+.ch1 {
+    color: #8c0000;
+    transition: all 1s;
+}
+
+table,
+tr,
+td {
+    box-shadow: #8c0000 3px 3px 3px 3px;
+    border: 1px solid #8c0000;
+    background-color: #ecc2c2;
+    transition: all 1s;
+    color: #8c0000;
+}
+
+#resks {
+    color: #8c0000;
+    transition: all 1s;
+} 
+
+.tod {
+    color: rgb(73, 5, 17);
+    background-color: rgb(247, 222, 227);
+    transition: all 1s;
+}
+
+#timer {
+    color: #8c0000;
+    transition: all 1s;
+    border: 3px solid #8c0000;
+}
+
+.butt {
+    color: #8c0000;
+    background-color: #ecc2c2;
+    box-shadow: #8c0000 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+.butt:hover {
+    background-color: #b49898;
+}
+
+#img1 {
+    border: 5px solid #8c0000;
+    transition: all 1s;
+}
+
+.pcl {
+    color: #8c0000;
+    font-family: Arial, sans-serif;
+    transition: all 1s;
+}
+
+.column {
+    color: #8c0000;
+    font-family: Arial, sans-serif;
+    transition: all 1s;
+}
+
+#check {
+    color: #8c0000;
+    background-color: #ecc2c2;
+    box-shadow: #8c0000 3px 3px 3px 3px;
+    transition: all 1s;
+}
+
+#check:hover {
+    background-color: #b49898;
+}
